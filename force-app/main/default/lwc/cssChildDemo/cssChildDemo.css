@@ -1,0 +1,13 @@
+/* //who so over is the host 
+element will get this 
+styling in childcss */
+:host{
+    display: block;
+    background-color: red;
+    color: white;
+}
+:host(.blue){
+    display: block;
+    background-color: blue;
+    color: white;
+}

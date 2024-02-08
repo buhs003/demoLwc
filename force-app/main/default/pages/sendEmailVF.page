@@ -1,0 +1,5 @@
+<apex:page standardController="Contact" recordSetVar="records" extensions="sendEmailBatchhelper" action="{!runBatch}">
+    
+        <apex:outputText value="{!batchMessage}" rendered="{!NOT(ISBLANK(batchMessage))}" />
+
+</apex:page>

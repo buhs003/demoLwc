@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Create Record" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input label="First Name" value={firstName} required></lightning-input>
+            <lightning-input label="Last Name" value={lastName} required></lightning-input>
+            <div class="slds-p-top_medium">
+                <lightning-button label="Create" onclick={handleClick} variant="brand"
+                    class="slds-m-top_medium"></lightning-button>
+            </div>
+
+        </div>
+    </lightning-card>
+
+</template>

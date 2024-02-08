@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <!-- //Do you want to expose this Component publically -->
+    <isExposed>true</isExposed>
+    <!-- //which pages we exactly want to targate. -->
+    <targets>
+
+        <target>lightning__AppPage</target>
+
+    </targets>
+</LightningComponentBundle>

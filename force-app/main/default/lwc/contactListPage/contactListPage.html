@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Contact List">
+        <lightning-datatable
+            data={contacts}
+            columns={columns}
+            key-field="Id"
+            hide-checkbox-column
+        ></lightning-datatable>
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <div class="slds-m-top_medium">
+                    <lightning-button-group>
+                        <lightning-button
+                            label="Previous"
+                            variant="brand"
+                            onclick={handlePrevious}
+                            disabled={disablePrevious}
+                        ></lightning-button>
+                        <lightning-button
+                            label="Next"
+                            variant="brand"
+                            onclick={handleNext}
+                            disabled={disableNext}
+                        ></lightning-button>
+                    </lightning-button-group>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

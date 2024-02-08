@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-29-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Account List">
+    <template if:true={accounts}>
+      <lightning-datatable key-field="Id" data={accounts} columns={columns} hide-checkbox-column="true">
+      </lightning-datatable>
+    </template>
+    <template if:false={accounts}>
+      <p>No accounts found.</p>
+    </template>
+  </lightning-card>
+</template>

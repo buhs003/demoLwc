@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="">
+    <div class="announcement-container">
+      <template if:true={announcements.data}>
+        <template for:each={announcements.data} for:item="announcement">
+          <div key={announcement.Id} class={announcement.Type__c}>
+            <div class="announcement-text">{announcement.Text__c}</div>
+            <div class="announcement-date">{announcement.Date__c}</div>
+          </div>
+        </template>
+      </template>
+      <template if:true={announcements.error}>
+        <div>Error fetching announcements: {announcements.error}</div>
+      </template>
+    </div>
+  </lightning-card>
+  
+</template>

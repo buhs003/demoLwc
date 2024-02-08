@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Slot Demo">
+        <div class="slds-p-around_medium">
+            <c-slot-child-demo>
+                <!-- //passing an HTML Or a markUp to the child component -->
+                <p class="slds-text-color_success" slot="First">My Name is SalesforceTrop</p>
+                <p class="slds-text-color_error" slot="second">My Age is 29</p>
+                <!-- slot name footer is passed from the clid -->
+                <p slot="footer">I am A footer</p>
+            </c-slot-child-demo>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Slot Demo">
+        <div class="slds-p-around_medium">
+            <c-slot-child-demo>
+                <!-- //passing an HTML Or a markUp to the child component -->
+                <!-- slot name slot is named in child  -->
+                <p class="slds-text-color_success" slot="First">My Name is SalesforceTrop</p>
+                <p class="slds-text-color_error" slot="second">My Age is 29</p>
+                <!-- if we do not pass footer there will a line space -->
+                <!-- <p slot="footer">I am A footer</p> -->
+            </c-slot-child-demo>
+        </div>
+    </lightning-card>
+ 
+</template>

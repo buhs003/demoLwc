@@ -1,0 +1,33 @@
+<template>
+    <!-- simple data -->
+    <!-- parent component passing primitive data to child alert component -->
+    <c-p2c-alert-component message="Here the data Comes" card-heading="Parent to child primitive data communication"
+        number=20 is-valid=false>
+    </c-p2c-alert-component>
+
+    <!-- complex data -->
+    <!-- Here the non-primitive data is passed from the parent js created carousel images-->
+    <div class="slds-var-m-bottom_medium"></div>
+
+    <c-p2c-carousel-component carousel-details={carouselData}> </c-p2c-carousel-component>
+
+    <!-- Here passing the data on click of an action with progressBar-->
+    <div class="slds-var-m-bottom_medium"></div>
+
+    <lightning-card title="Parent to child communication on action">
+        <div class="slds-var-m-bottom_medium">
+            <lightning-input type="number" label="Enter percentage" onkeyup={changeHandler} value={percentage}>
+            </lightning-input>
+            <c-p2c-progress-component progress-value={percentage}></c-p2c-progress-component>
+        </div>
+    </lightning-card>
+
+    <!-- Calling Child Method from parent by slider option-->
+    <div class="slds-var-m-bottom_medium"> </div>
+
+    <c-p2c-slider-component></c-p2c-slider-component>
+    
+    <lightning-button variant="brand" label="Reset Slider" onclick={handleClick}></lightning-button>
+
+
+</template>

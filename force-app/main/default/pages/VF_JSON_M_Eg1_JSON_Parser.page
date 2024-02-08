@@ -1,0 +1,9 @@
+<apex:page controller="JSON_M_Eg1_JSON_Parser">
+   <apex:form >
+    <apex:dataTable value="{!Result}" var="a" cellpadding="10" frame="border">
+        <apex:column value="{!a}" headerValue="Key"/>
+        
+       <apex:column value="{!Result[a]}" headerValue="Token"/>
+       </apex:dataTable>
+    </apex:form> 
+</apex:page>

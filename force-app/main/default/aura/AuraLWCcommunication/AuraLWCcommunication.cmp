@@ -1,0 +1,28 @@
+<!-- //if we want to expose 
+    the aura component to all pages then 
+    need to use implements -->
+<!-- the message is given through the lwc comp by aura -->
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- //to catch the message and render we need to create a container first -->
+    <aura:attribute name="message" type="string"/>
+
+    <lightning:card title="Aura to LWC Communication">
+        <div class="slds-p-around_medium">
+            <!-- here the binded message from controller.js is shown  -->
+            <div>{!v.message}</div>
+        </div>
+
+        <div class="slds-p-around_medium">
+             <!-- //calling lwc comp form aura -->
+            <!-- passing the data in title -->
+
+            <!-- //reciving the data from lwc comp as a event onsendmsg -->
+            <!-- //to create a method in Aura to recive a event
+                 we need to use controller and method name contoller calls the method  handelmsg-->
+            <c:lwcAuraCommunication onsendmsg="{!c.handelMsg}" title="Hello this message from aura">
+
+            </c:lwcAuraCommunication>
+        </div>
+    </lightning:card>
+
+</aura:component>

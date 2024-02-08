@@ -1,0 +1,25 @@
+.announcement-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .family-news {
+    background-color: lightblue;
+  }
+  
+  .fun-friday {
+    background-color: lightgreen;
+  }
+  
+  .upcoming-festival {
+    background-color: lightcoral;
+  }
+  
+  .announcement-text {
+    font-weight: bold;
+  }
+  
+  .announcement-date {
+    font-style: italic;
+  }

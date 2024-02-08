@@ -1,0 +1,18 @@
+<template>
+        <lightning-card>
+                <lightning-file-upload label="Upload Profile Photo" accept={acceptedFormats}
+                        onchange={handleUploadFinished}>
+                </lightning-file-upload>
+                <div if:true={profilePhotoUrl}>
+                        <img src={profilePhotoUrl} alt="Profile Photo" />
+                        <div class="slds-m-top_small">
+                                <lightning-button label="Replace" onclick={handleReplace}>
+                                        
+                                </lightning-button>
+                                <lightning-button label="Delete" variant="destructive"
+                                        onclick={handleDelete}>
+                                </lightning-button>
+                        </div>
+                </div>
+        </lightning-card>
+</template>

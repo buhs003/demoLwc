@@ -1,0 +1,18 @@
+<template>
+    <div> What is your Name?</div>
+    <!-- //some thing can come with in slot tag fom parent -->
+    <!-- slot with a name attribute is called name slot -->
+    <div>
+        <slot name="First"></slot>
+    </div> <!-- unnamed slots -->
+
+    <div>What is Your Age?</div>
+    <div>
+        <slot name="second"></slot>
+    </div>
+
+    <footer class="slds-card__footer slds-hide">
+        <!-- if the slot change  -->
+        <slot name="footer" onslotchange={handleFooterChange}></slot>
+    </footer>
+</template>

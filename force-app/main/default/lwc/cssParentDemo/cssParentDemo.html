@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="CSS Composition">
+        <div class="slds-p-around_medium"> 
+            <!-- //if we apply css on same tag the child tag will not change css not rechable -->
+            <h1>Hello I am Parent Component</h1>
+            <c-css-child-demo></c-css-child-demo>
+            <c-css-child-demo class="blue"></c-css-child-demo>
+
+            <p>Hello I am Slot one</p>
+            <p>Hello I am Slot two</p>
+        </div>
+    </lightning-card>
+</template>

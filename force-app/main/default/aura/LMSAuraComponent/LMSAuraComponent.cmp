@@ -1,0 +1,34 @@
+<!-- //implementing the component to the lightning page -->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <!-- //the inputhandler method is giving the input value and to store that we need a container attribute -->
+    <!-- we can store the value that we type in the input field in "messageValue" . -->
+    <!-- and to store it we will use component.set in js file -->
+    <aura:attribute name="messageValue" type="String" />
+    <aura:attribute name="messageRecived" type="String" />
+
+
+    <!-- //setting up the lightning message channel from LMS Meta file -->
+    <!-- when the message is passed the onMessage method will recive the message and need to create the handelMessage method in JS -->
+    <lightning:messageChannel type='SampleMessageChannel__c' aura:id='SampleMessageChannel'
+        onMessage='{!c.handelMessage}' scope='APPLICATION' />
+
+    <!-- publishing the message from our Aura component for that we create a lightning card-->
+    <lightning:card title="LMS AURA Component">
+        <div class="slds-m-around_medium">
+            <label>Enter Publish Message</label>
+            <input type="text" id="messageInput" name="messageInput" class="slds-input" value="{!v.messageValue}"
+                onkeyup="{!c.inputhandler}" />
+        </div>
+
+        <!-- //to publish our input message we need to create a publish button -->
+        <!-- the message to publish has a publishMessage method written in JS -->
+        <div class="slds-m-around_medium">
+            <lightning:button onclick="{!c.publishMessage}">Publish</lightning:button>
+        </div>
+        <!-- printing the recived message -->
+        <div class="slds-m-around_medium">
+            <h1><strong>Message Recived Comes Here</strong></h1>
+            <lightning:formattedText value="{!v.messageRecived}"/>
+        </div>
+    </lightning:card>
+</aura:component>

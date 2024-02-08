@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account Selector">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="6" padding="around medium">
+
+                <lightning-datatable key-field="Id" data={accounts} columns={columns}
+                    onrowselection={handleRowSelection} selected-rows={selectedRows}>
+                </lightning-datatable>
+
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around medium">
+
+                <template if:true={selectedAccounts.length}>
+                    <lightning-card title="Selected Accounts">
+                        <template for:each={selectedAccounts} for:item="account">
+                            <p key={account.Id}>{account.Name}</p>
+                        </template>
+                    </lightning-card>
+                </template>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

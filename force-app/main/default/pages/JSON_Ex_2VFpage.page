@@ -1,0 +1,11 @@
+<apex:page controller="JSON_Ex_2">
+    Age :{!age}<br/><br/> 
+    Account :{!acc.name} ---{!acc.Phone} --{!acc.Industry}<br/><br/> 
+    Student :{!std.StdName} ---{!std.StdPhone} ---{!std.Stdcity}<br/><br/> 
+    Student :{!newStd2.StdName} ---{!newStd2.StdPhone} ---{!newStd2.Stdcity}<br/><br/> 
+    
+    <apex:repeat value="{!resMap}" var="b">
+        {!b} ---{!resMap[b]} <br/>
+    </apex:repeat>
+     
+</apex:page>

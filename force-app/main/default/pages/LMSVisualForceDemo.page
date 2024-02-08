@@ -1,0 +1,57 @@
+<!-- //using lightningStyleSheets=true to see the lightning slds classes -->
+<apex:page lightningStylesheets="true">
+    <apex:slds />
+    <!-- //HTML code will come -->
+    <div class="slds-scope">
+        <div class="slds-p-around_small">
+            <lable>Enter publish Message</lable>
+            <input type="text" class="slds-input" id="messageField" />
+            <div class="slds-p-top_small slds-p-bottom_small">
+                <button class="slds-button slds-button_neutral" onclick="publishHandler()">Publish</button>
+                <button class="slds-button slds-button_neutral" onclick="subscriberHandler()">Subscribe</button>
+                <button class="slds-button slds-button_neutral" onclick="unsubscriberHandler()">Unsubscribe</button>
+
+            </div>
+            <p>Message Recived</p>
+            <div id="recievedMessage"></div>
+        </div>
+    </div>
+    <!-- //java script code will come -->
+    <script>
+        // Get the message channel reference using $MessageChannel Global Variable
+        let SAMPLEMC = "{!$MessageChannel.SampleMessageChannel__c}"
+        let subscribtionTOMC
+        function publishHandler() {
+            //fetching the data that is typed in Input
+            let data = document.getElementById("messageField").value
+            //then constructing the message and publish.
+            const message = {
+                lmsData: {
+                    value: data
+                }
+            }
+            //Publish a Message
+            sforce.one.publish(SAMPLEMC, message)
+        }
+        //Subscribe a Message
+        function subscriberHandler() {
+            if (!subscribtionTOMC) {
+                subscribtionTOMC = sforce.one.subscribe(SAMPLEMC, msghandler, { scope: "APPLICATION" })
+            }
+        }
+        //unsubscribe a Message
+        function unsubscriberHandler() {
+            if (!subscribtionTOMC) {
+            sforce.one.unsubscribe(subscribtionTOMC)
+            subscribtionTOMC = null
+            }
+        }
+        // here we will recive the message and store the message
+        function msghandler(message) {
+            let recievedMessage = document.getElementById("recievedMessage")
+            recievedMessage.innerHTML = message && message.lmsData ? message.lmsData.value : "No Data Send"
+
+        }
+    </script>
+
+</apex:page>

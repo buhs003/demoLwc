@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Child To Parent Communication">
+        <div class="slds-var-m-around_medium" onclose={closeHandler}>
+
+            <h1>{msg}</h1>
+            <lightning-button label="Show Model" onclick={clickHandler}>
+            </lightning-button>
+            <template if:true={showModal}>
+                <c-c2p-modal-component ></c-c2p-modal-component>
+            </template>
+        </div>
+
+    </lightning-card>
+
+    <c-batch-status job-id={jobId} redirect-url="https://www.salesforce.com"></c-batch-status>
+
+
+
+</template>

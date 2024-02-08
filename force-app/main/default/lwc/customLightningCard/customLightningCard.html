@@ -1,0 +1,36 @@
+<!-- this is a reuseable 
+    component in lightning desgin system we are jst going to 
+    embed this component in main resuable comp -->
+<template>
+    <article class="slds-card">
+        <!-- header -->
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <div class="slds-card__header-link slds-truncate">
+                            <slot name="title"></slot>
+
+                        </div>
+                    </h2>
+                </div>
+                <div class="slds-no-flex">
+                    <slot name="actions"></slot>
+                </div>
+            </header>
+        </div>
+        <!-- Body -->
+        <div class="slds-card__body">
+            <slot></slot>
+        </div>
+        <!-- footer -->
+        <!--  hide the footer always by default   -->
+        <footer class="slds-card__footer slds-hide">
+            <!-- //using onslotchange method 
+                 only when 
+                some one pass name to the name footer -->
+            <slot name="footer" onslotchange={handleSlotFooterChange}></slot>
+        </footer>
+
+    </article>
+</template>

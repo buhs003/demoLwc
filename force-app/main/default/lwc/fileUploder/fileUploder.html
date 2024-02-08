@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="File Uploder">
+        <lightning-file-upload 
+            label="Upload Files"
+         multiple accept=".jpg,.jpeg,.png,.pdf"
+            onuploadfinished={handleuplodeFinished}>
+    </lightning-file-upload>
+
+    <template if:true={uploadedFiles.length}>
+        <lightning-card title="Upload Files">
+            <template for:each={uploadedFiles} for:item="file">
+                <p key={file.documentId}>{file.name}</p>
+            </template>
+        </lightning-card>
+    </template>
+    </lightning-card>
+    
+</template>

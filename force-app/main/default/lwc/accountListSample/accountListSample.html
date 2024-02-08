@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Account List Sample">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Name
+                    </th>
+                    <th scope="col">
+                        Industry
+                    </th>
+                    <th scope="col">
+                        Phone
+                    </th>
+                    <th scope="col">
+                        Rating
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accounts} for:item="acc">
+                    <tr key={acc.Id}>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Industry}</td>
+                        <td>{acc.Phone}</td>
+                        <td>{acc.Rating}</td>      
+                    </tr>
+                </template>
+</tbody>
+</table>
+</lightning-card>
+</template>

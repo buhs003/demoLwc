@@ -1,0 +1,13 @@
+<template>
+    <div class="container" style="background: white;
+    padding: 16px;">
+    <img src={imageUrl} style="height:40px; width:150px"/>
+
+        <template for:each={formFields} for:item="fields">
+            <div key={fields.label}>
+                <p><strong>{fields.label}</strong></p>
+                <p>{fields.value}</p>
+            </div>
+        </template>
+    </div>
+</template>

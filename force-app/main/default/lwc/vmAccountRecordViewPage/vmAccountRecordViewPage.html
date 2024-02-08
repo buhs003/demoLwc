@@ -1,0 +1,72 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Account Record Details" icon-name="standard:account">
+        <!-- Accordian Event catcher -->
+        <div class="slds-m-around_medium">
+
+            <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle}
+                active-section-name={activeSections}>
+
+                <lightning-accordion-section name="A" label="Account Details">
+                    <div class="slds-box slds-box_xx-small slds-var-m-around_medium">
+                        <lightning-record-form object-api-name={objectName} record-id={recordId} fields={fieldList}
+                            onsuccess={sucessHandler} mode="View" columns="2">
+                        </lightning-record-form>
+                    </div>
+                </lightning-accordion-section>
+
+                <lightning-accordion-section name="B" label="Primary Contact Details">
+
+                    <c-vms-account-primary-contact record-id={recordId}>
+
+                    </c-vms-account-primary-contact>
+
+                </lightning-accordion-section>
+                <!-- //here to start -->
+
+                <lightning-accordion-section name="C" label="All Contacts">
+                    <div class="slds-var-m-around_medium">
+                        <c-vms-contact-detail>
+
+                        </c-vms-contact-detail>
+                    </div>
+                </lightning-accordion-section>
+
+
+                <lightning-accordion-section name="D" label="Attachments">
+                    <div class="slds-var-m-around_medium">
+                        <lightning-card title="Notes & Attachments" icon-name="custom:custom56">
+                            <lightning-file-upload label="Attach Files" name="UplodeFile" record-id={recordId}
+                                onuploadfinished={handleUploadFinished} multiple>
+
+                            </lightning-file-upload>
+                        </lightning-card>
+                        <lightning-card title="File Preview and Download">
+                            <template for:each={filesList} for:item="file">
+                                <div key={file.value} class="slds-box">
+                                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
+                                        <p><strong>FileName-</strong>{file.label}</p>
+                                    </div>
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-clearfix">
+                                            <lightning-button label="Preview" class="slds-float_left" variant="brand"
+                                                data-id={file.value} onclick={previewHandler}></lightning-button>
+                                        </div>
+                                        <div
+                                            class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12">
+                                                 <lightning-button-icon style='margin-left:16px' icon-name="utility:delete"
+                                                variant="destructive" data-id={file.value} alternative-text="Delete"
+                                                class="test slds-m-left_xx-Mediam slds-var-p-arround_medium"
+                                                title="Delete" onclick={handleDeletefile}></lightning-button-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </lightning-card>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+</template>

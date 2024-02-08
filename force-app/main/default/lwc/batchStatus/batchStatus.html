@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Batch Status">
+        <template if:true={isRunning}>
+            <p>Batch job is running...</p>
+        </template>
+        <template if:true={isCompleted}>
+            <p>Batch job completed with status: {status}</p>
+            <lightning-button label="Redirect" onclick={redirectToUrl}></lightning-button>
+        </template>
+    </lightning-card>
+</template>

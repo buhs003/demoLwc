@@ -1,0 +1,9 @@
+div{
+    /* token with color */
+    /* color:blue;
+    background: white; */
+
+    /* specifice token name is used */
+    color:var(--lwc-brandAccessible);
+    background:var(--lwc-colorBackgroundAlt) ;
+}

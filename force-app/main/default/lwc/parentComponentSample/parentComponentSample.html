@@ -1,0 +1,6 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-button label="Show Child Component" onclick={showChild}></lightning-button>
+        <c-child-component-sample onmessage={handleChildMessage}></c-child-component-sample>
+    </lightning-card>
+</template>

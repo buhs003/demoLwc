@@ -1,0 +1,75 @@
+<template>
+    <div class="slds-p-bottom_xx-large">
+        <lightning-card title="Opportunity Details" icon-name="custom:custom74">
+            <div class="c-container">
+                <lightning-layout horizontal-align={horizontalAlign}>
+                    <!-- With default attribute values of size and flexibility, 
+                        layout items take the size of their 
+                        content and don't occupy entire width of the container. -->
+
+                    <lightning-layout-item flexibility="auto" padding="around-medium">
+                        <lightning-input type="search" value={keyword} label="Search Opportunity"
+                            placeholder="Enter Opportunity Name" onchange={handelSearch} style="width:300px">
+                        </lightning-input>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item flexibility="auto" padding="around-medium">
+                        Import Data Formate: <br>
+                        <a href={urlForAcc} download="">
+                            <lightning-icon icon-name="action:download" size="small">
+                            </lightning-icon>
+                        </a>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item flexibility="auto" padding="around-medium">
+                        <lightning-file-upload accept={acceptedFormats} label='Import Opportunity Data' multiple='multiple'
+                            onuploadfinished={uplodeFileHandler}>
+                        </lightning-file-upload>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item flexibility="auto" padding="around-medium">
+                        <lightning-button variant="brand" label="New" title="New" onclick={handleClick}
+                            class="slds-clearfix slds-float_right slds-p-around_small">
+                        </lightning-button>
+
+                    </lightning-layout-item>
+
+                </lightning-layout>
+            </div>
+            <div class="slds-var-p-around_medium">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>StageName</th>
+                            <th>Amount</th>
+                            <th>CloseDate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={Opportunities} for:item="Opp">
+                            <tr key={Opp.Id}>
+                                <td>{Opp.Name}</td>
+                                <td>{Opp.Description}</td>
+                                <td>{Opp.StageName}</td>
+                                <td>{Opp.Amount}</td>
+                                <td>{Opp.CloseDate}</td>
+                                <td>
+                                    <lightning-button-menu>
+                                        <lightning-menu-item value={Opp.Id} label="View"
+                                            onclick={handleView}></lightning-menu-item>
+                                        <lightning-menu-item value={Opp.Id} label="Edit"
+                                            onclick={handleEdit}></lightning-menu-item>
+                                        <lightning-menu-item value={Opp.Id} label="Delete"
+                                            onclick={handleDelete}></lightning-menu-item>
+                                    </lightning-button-menu>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </lightning-card>
+    </div>
+</template>

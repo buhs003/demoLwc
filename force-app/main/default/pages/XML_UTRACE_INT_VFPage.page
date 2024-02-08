@@ -1,0 +1,7 @@
+<apex:page controller="XML_UTRACE_INT">
+    <apex:form >
+        <apex:inputText value="{!ipAddress}"/>
+        <apex:commandButton value="Get IP Details" action="{!callUtrace}" reRender="OP"/>
+        <apex:inputTextArea value="{!body}" id="OP" cols="30" rows="30"/>
+    </apex:form>
+</apex:page>

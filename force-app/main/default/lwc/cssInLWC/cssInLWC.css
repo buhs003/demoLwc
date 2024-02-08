@@ -1,0 +1,24 @@
+/* h1,div,p,span this all are elements 
+and we can apply style to this
+ element in css file 
+ we can also use class under the elements 
+ tags by using .class to apply style
+ 
+ we avoid #id in styling
+
+ we use only elements ,classes,pseudocode in CSS Styling
+ */
+ p{
+    color:green;
+    font-size: 30px;
+    border: var(--lwc-borderWidthThin, 1px) solid red
+    
+}
+.user{
+    color:blue;
+    font-size: 30px
+}
+.user:hover{
+    font-size: 50px;
+    color: red;
+}

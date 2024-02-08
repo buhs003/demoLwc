@@ -1,0 +1,18 @@
+h1{
+    font-size: 30px;
+    color:red;
+}
+/* //Also Called as host element */
+/* //here css style is applied from parent to child styling */
+/* //called as host element */
+/* c-css-child-demo{
+    display: block;
+    background-color: green;
+    color: white;
+
+} */
+/* //the slot can be chaged by parent only  */
+p{
+    font-size: 20px;
+    color:gold
+}

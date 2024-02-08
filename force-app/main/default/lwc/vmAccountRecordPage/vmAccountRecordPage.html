@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Account Details" icon-name="custom:custom14"
+        style="background-color:rgba(245, 245, 250, 0.932)">
+        <div>
+            <div class="slds-m-around_medium">
+                <lightning-input type="search" value={keyWord} label="Search The Account Record"
+                    placeholder="Enter Search Value" style="width:300px" onchange={handelSearch}>
+
+                </lightning-input>
+                <div class="slds-p-top_medium">
+                    <lightning-button variant="brand" label="Create Account" title="Create Account"
+                        onclick={handelClick} class="slds-clearfix slds-p-around_small">
+
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+        <!-- table start -->
+        <div class="slds-var-p-around_medium">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Industry</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={Accounts} for:item="account">
+                    <tr key={account.Id}>
+                        <td>{account.Name}</td>
+                        <td>{account.Phone}</td>
+                        <td>{account.Website}</td>
+                        <td>{account.Industry}</td>
+
+                        <td>
+                            <lightning-button-menu>
+                                <lightning-menu-item value={account.Id} label="View"
+                                    onclick={handelView}></lightning-menu-item>
+                                <lightning-menu-item value={account.Id} label="Edit"
+                                    onclick={handelEdit}></lightning-menu-item>
+                                <lightning-menu-item value={account.Id} label="Delete"
+                                    onclick={handelDelete}></lightning-menu-item>
+                            </lightning-button-menu>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</lightning-card>
+</template>

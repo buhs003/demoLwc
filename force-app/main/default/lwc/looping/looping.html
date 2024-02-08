@@ -1,0 +1,64 @@
+<template>
+    <lightning-card title="For Each Loop">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList} for:item="Car">
+
+                <ul key={Car} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{Car}</li>
+
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="For Each Loop with array of object">
+        <div class="slds-var-m-around_medium">
+            <template for:each={ceoList} for:item="List">
+
+                <ul key={List.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{List.name} {List.comapny}</li>
+
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="iterator Loop">
+        <div class="slds-var-m-around_medium">
+            <!-- //it works with a iterator keyword then 
+                collen and each item alias and where to 
+                run the loop take its  property -->
+            <template iterator:ceo={ceoList}>
+                <div key={ceo.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <!-- Directive -->
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    list of top companies and there CEO's
+                                </strong>
+                            </div>
+
+                        </template>
+
+                        <li class="slds-item">
+                            <strong>
+                                {ceo.value.comapny}
+                            </strong>
+                            
+                            {ceo.value.name}
+                        </li>
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>
+                                    Thanks for reading the list
+                                </strong>
+                            </div>
+
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

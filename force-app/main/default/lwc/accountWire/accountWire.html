@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="wire apex property demo">
+        <div class="slds-p-around_medium">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="account">
+                    <div class = "slds-box slds-box_xx-small" key={account.id}>
+                        <p><strong>Name: </strong>{account.name}</p>
+                        <p><strong>Type: </strong>{account.type}</p>
+                        <p><strong>Industry: </strong>{account.industry}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card> 
+</template>

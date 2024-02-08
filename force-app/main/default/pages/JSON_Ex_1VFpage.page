@@ -1,0 +1,15 @@
+<apex:page controller="JSON_Ex_1">
+    Integer Number:{!integerValue} <br/>
+    Decimal Number:{!decimalValue} <br/>
+    Account Details:{!accountValue} <br/>
+    Student Details :{!studentValue}<br/> 
+    
+    
+    Integer Number:{!integerPretty} <br/>
+    Decimal Number:{!decimalPretty} <br/>
+    Account Details:{!accountPretty} <br/>
+    Student Details :{!studentPretty}<br/>
+    
+    Without Supress :{!ContactValue}<br/>
+    With Supress    :{!ContactNull}<br/>
+</apex:page>

@@ -1,0 +1,16 @@
+<!-- recordDetails.html -->
+<template>
+    <lightning-card title="Record Details Sample" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            	      <template if:true={accounts}>
+                 <p><b>Name:</b> {accounts.fields.Name.value}</p>
+                 <p><b>Industry:</b> {accounts.fields.Industry.value}</p>
+                 <p><b>Annual Revenue:</b> {accounts.fields.AnnualRevenue.value}</p>
+                <!-- Add more fields as needed -->
+            </template>
+<template if:false={accounts}>
+                <p>No record data available for the provided Id.</p>
+            </template>
+</div>
+</lightning-card>
+</template>

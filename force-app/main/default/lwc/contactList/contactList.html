@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Contact List">
+        <template if:true={contacts}>
+            <template if:true={filteredContacts.length}>
+                <lightning-layout>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-input type="search" label="Search" onchange={handleSearch}></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <template for:each={filteredContacts} for:item="contact">
+                            <p key={contact.Id}>{contact.Name}</p>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+            <!-- <template if:true={filteredContacts.length}>
+                <p>No contacts found.</p>
+            </template> -->
+        </template>
+        <!-- <template if:true={contacts}>
+            <p>Loading contacts...</p>
+        </template> -->
+    </lightning-card>
+</template>

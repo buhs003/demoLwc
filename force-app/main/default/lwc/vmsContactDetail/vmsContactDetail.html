@@ -1,0 +1,42 @@
+<template>
+    <lightning-button variant="brand" label="New Contact" title="New Contact" onclick={handelClick}
+        class="slds-clearfix slds-float_right slds-p-around_small">
+
+    </lightning-button>
+    <div class="slds-var-p-around_medium">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>AccountId</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={Contacts} for:item="allcontacts">
+                    <tr key={allcontacts.Id}>
+                        <td>{allcontacts.Name}</td>
+                        <td>{allcontacts.Phone}</td>
+                        <td>{allcontacts.Email}</td>
+                        <td>{allcontacts.AccountId}</td>
+                        <td>
+                            <lightning-button-menu>
+                                <lightning-menu-item value={allcontacts.Id} label="View"
+                                    onclick={handelView}></lightning-menu-item>
+                                <lightning-menu-item value={allcontacts.Id} label="Edit"
+                                    onclick={handelEdit}></lightning-menu-item>
+                                <lightning-menu-item value={allcontacts.Id} label="Delete"
+                                    onclick={handelDelete}></lightning-menu-item>
+
+                            </lightning-button-menu>
+                        </td>
+
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+</template>

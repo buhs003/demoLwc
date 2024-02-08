@@ -1,0 +1,31 @@
+<template>
+    <!-- lightning-card:-to apply a stylized container around a grouping of information -->
+    <lightning-card title="lightning record view form">
+        <lightning-record-view-form
+        object-api-name="Account"
+        record-id="0015i00000P1yDMAAZ"
+        
+        >
+        <!--slds-grid:- control alignment, order, flow, and gutters every grid is divided in 12 coloums-->
+        <!-- slds-gutters:-add padding to your grid  -->
+        <div class="slds-grid slds-gutters">
+            <!-- creating 2 coloums with spaces  -->
+            <div class="slds-col slds-size_6-of-12">
+                <!-- to create a field in readonly mode  -->
+                <!-- First coloum i want 3 field -->
+                <lightning-output-field field-name="Name"></lightning-output-field>
+                <lightning-output-field field-name="Phone"></lightning-output-field>
+                <lightning-output-field field-name="Industry"></lightning-output-field>
+
+            </div>
+
+            <div class="slds-col slds-size_6-of-12">
+                <!-- in second coloum i want 1 field -->
+                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+            </div>
+
+        </div>
+
+        </lightning-record-view-form>
+    </lightning-card>
+</template>
